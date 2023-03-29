@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="soccerApp" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.toptal.soccer.SoccerApp" />
+    <module name="SoccerManager" />
+    <option name="PROGRAM_PARAMETERS" value="server ./config.yml" />
+    <option name="VM_PARAMETERS" value="-DlocalConfig=true" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

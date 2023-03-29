@@ -1,0 +1,48 @@
+version: 0.0.1
+
+# Server settings
+server:
+  applicationConnectors:
+    - type: http
+      port: 9010
+  adminConnectors:
+    - type: http
+      port: 9011
+
+# Database settings.
+database:
+  # the name of the JDBC driver, mysql in our case
+  driverClass: com.mysql.cj.jdbc.Driver
+  # the username
+  user: develop
+  # the password
+  password: freelance
+  # the JDBC URL; database is soccerManager
+  url: jdbc:mysql://localhost:3306/soccerManager
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+
+  # the SQL query to run when validating a connection's liveness
+  validationQuery: "/* MyApplication Health Check */ SELECT 1"
+
+  initialSize: 2
+  # the minimum number of connections to keep open
+  minSize: 2
+
+  # the maximum number of connections to keep open
+  maxSize: 2
+
+  # whether idle connections should be validated or not
+  checkConnectionWhileIdle: false
+
+# Logging settings
+logging:
+  level: INFO
+  loggers:
+    org.hibernate: WARN
+
+# secret (salt) to generate Auth tokens
+token: a1584cbfa2472d89473ac0ef35ee59
